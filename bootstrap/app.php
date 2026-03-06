@@ -56,6 +56,7 @@ $app->singleton(
 
 $app->singleton(PackageManifest::class, function ($app) {
     $manifestPath = '/tmp/laravel/bootstrap/cache/packages.php';
+    $appPath = dirname(__DIR__);
     
     // Создаём директорию если её нет
     $manifestDir = dirname($manifestPath);
@@ -65,7 +66,7 @@ $app->singleton(PackageManifest::class, function ($app) {
     
     $files = new Filesystem();
     
-    return new \App\Support\PackageManifest($files, $manifestPath);
+    return new \App\Support\PackageManifest($files, $manifestPath, $appPath);
 });
 
 /*

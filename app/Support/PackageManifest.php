@@ -19,10 +19,11 @@ class PackageManifest extends BasePackageManifest
      *
      * @param  \Illuminate\Filesystem\Filesystem  $files
      * @param  string  $manifestPath
+     * @param  string  $appPath
      * @return void
      */
-    public function __construct(Filesystem $files, $manifestPath)
+    public function __construct(Filesystem $files, $manifestPath, $appPath)
     {
-        parent::__construct($files, $manifestPath);
+        parent::__construct($files, $manifestPath, $appPath);
     }
 }
