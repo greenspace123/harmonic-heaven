@@ -12,7 +12,7 @@ class PackageManifest extends BasePackageManifest
      *
      * @var string
      */
-    protected $manifestPath;
+    public $manifestPath;
     
     /**
      * Create a new package manifest instance.
