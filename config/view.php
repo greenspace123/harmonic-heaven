@@ -30,7 +30,7 @@ return [
 
     'compiled' => env(
         'VIEW_COMPILED_PATH',
-        realpath(storage_path('framework/views'))
+        env('APP_ENV') === 'production' ? '/tmp/views' : realpath(storage_path('framework/views'))
     ),
 
 ];
