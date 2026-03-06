@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --color-accent: #00897B;        /* Бирюзовый (Teal) */
+    --color-accent-dark: #00695C;   /* Темная бирюза */
+    --color-secondary: #FF7043;     /* Коралловый (акцент для кнопок) */
+    --color-secondary-hover: #F4511E;
+    --color-header: #263238;        /* Глубокий синий сланец (Blue Gray) */
+    --color-text: #000000;          /* Спокойный серо-голубой */
+    --color-bg-light: #E0F2F1;      /* Очень светлый мятный фон */
+    --color-white: #ffffff;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-bg-light);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-header);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.navbar {
+    background: rgba(0, 137, 123, 0.95) !important;
+    backdrop-filter: blur(10px);
+    padding: 0.8rem 0;
+    box-shadow: 0 4px 20px rgba(38, 50, 56, 0.15);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #fff !important;
+    letter-spacing: 0.5px;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 500;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #fff !important;
+    transform: translateY(-2px);
+}
+
+.hero-section {
+    background: linear-gradient(135deg, var(--color-header) 0%, var(--color-accent) 100%);
+    color: white;
+    padding: 5rem 0;
+    border-radius: 0 0 0 0; 
+    margin-bottom: 3rem;
+}
+
+.hero-section h1 {
+    color: white;
+}
+
+.hero-section .lead {
+    color: rgba(255,255,255, 0.85);
+}
+
+/* Кнопки */
+.btn {
+    padding: 0.6rem 1.8rem;
+    border-radius: 50px; /* Закругленные кнопки */
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 137, 123, 0.4);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent-dark);
+    transform: translateY(-2px);
+}
+
+/* Здесь lavender заменен на coral, но класс оставлен для совместимости */
+.btn-lavender {
+    background-color: var(--color-secondary);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(255, 112, 67, 0.4);
+}
+
+.btn-lavender:hover {
+    background-color: var(--color-secondary-hover);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-outline-light:hover {
+    color: var(--color-header);
+}
+
+/* Карточки */
+.custom-card {
+    border: none;
+    border-radius: 20px;
+    background: white;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 105, 92, 0.05); /* Тень с оттенком бирюзы */
+}
+
+.custom-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 105, 92, 0.12);
+}
+
+.card-img-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-img-top {
+    transition: transform 0.5s ease;
+}
+
+.custom-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* Badge (Жанры) */
+.badge-genre {
+    background-color: var(--color-bg-light);
+    color: var(--color-text);
+    border: 1px solid #B2DFDB; /* Светлая граница */
+    padding: 0.5em 1em;
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-header);
+    color: rgba(255,255,255,0.7);
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    margin-top: 5rem;
+}
+
+footer h5 {
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+footer a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: var(--color-secondary);
+}
+
+/* Элементы форм */
+.form-control {
+    border-radius: 30px;
+    padding: 0.7rem 1.5rem;
+    border: 1px solid #B0BEC5;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 3px rgba(0, 137, 123, 0.15);
+    border-color: var(--color-accent);
+}
+
+/* Стилизация чекбокса под Бирюзу */
+.form-check-input:checked {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.form-check-input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 0.25rem rgba(0, 137, 123, 0.25);
+}
+
+/* Лейблы полей */
+.form-label {
+    margin-bottom: 0.3rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Ссылки в формах */
+a {
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: var(--color-secondary-hover) !important;
+}
+
+/* --- ADMIN PANEL STYLES --- */
+
+.admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Боковая панель */
+.admin-sidebar {
+    min-width: 260px;
+    max-width: 260px;
+    background-color: var(--color-header);
+    color: #fff;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-sidebar .sidebar-brand {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    background: rgba(0,0,0,0.1);
+}
+
+.admin-nav {
+    padding: 1rem 0;
+    flex-grow: 1;
+}
+
+.admin-nav .nav-link {
+    color: rgba(255, 255, 255, 0.7) !important;
+    padding: 0.8rem 1.5rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-left: 4px solid transparent;
+}
+
+.admin-nav .nav-link:hover, .admin-nav .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff !important;
+    border-left-color: var(--color-secondary); /* Коралловый акцент */
+    transform: none; /* Отключаем сдвиг из основного CSS */
+}
+
+/* Основной контент админки */
+.admin-content {
+    flex-grow: 1;
+    background-color: #F5F7F8; /* Чуть темнее основного фона для контраста с белыми картами */
+    padding: 2rem;
+}
+
+/* Статистические карточки */
+.stat-card {
+    border: none;
+    border-radius: 15px;
+    background: white;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+/* Таблицы админки */
+.table-custom {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.table-custom thead {
+    background-color: var(--color-bg-light);
+    color: var(--color-header);
+}
+
+.table-custom th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    padding: 1rem;
+    border-bottom: none;
+}
+
+.table-custom td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.table-custom tr:last-child td {
+    border-bottom: none;
+}
+
+/* Адаптив для админки */
+@media (max-width: 768px) {
+    .admin-wrapper {
+        flex-direction: column;
+    }
+    .admin-sidebar {
+        min-width: 100%;
+        max-width: 100%;
+    }
+    .admin-content {
+        padding: 1rem;
+    }
+}
