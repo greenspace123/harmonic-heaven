@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Filesystem\Filesystem;
 use Illuminate\Foundation\PackageManifest;
 
 /*
@@ -62,7 +63,10 @@ $app->singleton(PackageManifest::class, function ($app) {
         mkdir($manifestDir, 0777, true);
     }
     
-    return new \App\Support\PackageManifest($manifestPath);
+    return new \App\Support\PackageManifest(
+        $app->make(Filesystem::class),
+        $manifestPath
+    );
 });
 
 /*

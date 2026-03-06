@@ -2,6 +2,7 @@
 
 namespace App\Support;
 
+use Illuminate\Filesystem\Filesystem;
 use Illuminate\Foundation\PackageManifest as BasePackageManifest;
 
 class PackageManifest extends BasePackageManifest
@@ -16,21 +17,12 @@ class PackageManifest extends BasePackageManifest
     /**
      * Create a new package manifest instance.
      *
+     * @param  \Illuminate\Filesystem\Filesystem  $files
      * @param  string  $manifestPath
      * @return void
      */
-    public function __construct($manifestPath)
+    public function __construct(Filesystem $files, $manifestPath)
     {
-        $this->manifestPath = $manifestPath;
-    }
-    
-    /**
-     * Get the path to the cached package manifest file.
-     *
-     * @return string
-     */
-    protected function manifestPath()
-    {
-        return $this->manifestPath;
+        parent::__construct($files, $manifestPath);
     }
 }
