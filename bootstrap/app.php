@@ -63,10 +63,9 @@ $app->singleton(PackageManifest::class, function ($app) {
         mkdir($manifestDir, 0777, true);
     }
     
-    return new \App\Support\PackageManifest(
-        $app->make(Filesystem::class),
-        $manifestPath
-    );
+    $files = new Filesystem();
+    
+    return new \App\Support\PackageManifest($files, $manifestPath);
 });
 
 /*
